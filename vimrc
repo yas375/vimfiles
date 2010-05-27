@@ -14,7 +14,7 @@ set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
 
 set incsearch   "find the next match as we type the search
-set hlsearch    "hilight searches by default
+set ic "игнорировать регист при поиске 
 
 set number      "add line numbers
 set showbreak=...
@@ -198,8 +198,8 @@ function! s:Median(nums)
 endfunction
 
 "indent settings
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 
@@ -239,7 +239,7 @@ syntax on
 
 "some stuff to get the mouse going in term
 set mouse=a
-set ttymouse=xterm2
+set mousemodel=popup
 
 "hide buffers when not displayed
 set hidden
@@ -248,6 +248,7 @@ set hidden
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 
+colorscheme vibrantink
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
@@ -281,6 +282,7 @@ else
 endif
 
 nmap <silent> <Leader>p :NERDTreeToggle<CR>
+map <F11> <Esc>:NERDTreeToggle<cr>
 
 "make <c-l> clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR><C-L>
@@ -288,9 +290,11 @@ inoremap <C-L> <C-O>:nohls<CR>
 
 "map to bufexplorer
 nnoremap <leader>b :BufExplorer<cr>
+nnoremap <F5> <Esc>:BufExplorer<cr>
 
 "map to CommandT TextMate style finder
 nnoremap <leader>t :CommandT<CR>
+nnoremap <C-t> :CommandT<cr>
 
 "map Q to something useful
 noremap Q gq
