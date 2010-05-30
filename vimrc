@@ -18,7 +18,8 @@ set ic "игнорировать регист при поиске
 
 set number      "add line numbers
 set showbreak=...
-set wrap linebreak nolist
+" set wrap linebreak nolist
+set nowrap
 
 "mapping for command key to map navigation thru display lines instead
 "of just numbered lines
@@ -294,7 +295,7 @@ nnoremap <F5> <Esc>:BufExplorer<cr>
 
 "map to CommandT TextMate style finder
 nnoremap <leader>t :CommandT<CR>
-nnoremap <C-t> :CommandT<cr>
+"nnoremap <C-t> :CommandT<cr>
 
 "map Q to something useful
 noremap Q gq
