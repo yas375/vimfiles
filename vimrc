@@ -253,13 +253,11 @@ colorscheme vibrantink
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
-
+    colorscheme railscasts
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme ir_dark
-        set guifont=Inconsolata\ Medium\ 12
+        set guifont=Inconsolata\ Medium
     else
-        colorscheme railscasts
         set guitablabel=%M%t
         set lines=40
         set columns=115
