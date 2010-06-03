@@ -39,6 +39,7 @@ set linespace=4
 
 "disable visual bell
 "set visualbell t_vb=
+set vb t_vb=""
 
 "try to make possible to navigate within lines of wrapped lines
 nmap <Down> gj
@@ -90,6 +91,18 @@ set laststatus=2
 
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
+set guioptions-=L
+set guioptions-=l
+
+"  m   when present, menu bar is present
+"  T   when present, toolbar is present on versions which support it (W32, GTK1, GTK2, Motif, Photon, kvim)
+"  l   when present, left scrollbar is always present
+"  L   when present, left scrollbar is present if there is a vertical split
+"  r   when present, right scrollbar is always present
+"  R   when present, right scrollbar is present if there is a vertical split
+"  b   when present, bottom scrollbar is present
+"  F   when present, gvim (Motif) will display a footer
+
 
 "recalculate the trailing whitespace warning when idle, and after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
@@ -254,13 +267,12 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
     colorscheme railscasts
+    set lines=999 columns=999
     if has("gui_gnome")
         set term=gnome-256color
         set guifont=Inconsolata\ Medium
     else
         set guitablabel=%M%t
-        set lines=40
-        set columns=115
     endif
     if has("gui_mac") || has("gui_macvim")
         set guifont=Menlo
@@ -270,6 +282,7 @@ if has("gui_running")
         "map <D-t> :CommandT<CR>
         " make Mac's Option key behave as the Meta key
         set invmmta
+        set columns=171 lines=42
     endif
     if has("gui_win32") || has("gui_win32s")
         set guifont=Consolas:h12
