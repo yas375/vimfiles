@@ -315,6 +315,9 @@ map <A-q> :cclose<CR>
 map <A-j> :cnext<CR>
 map <A-k> :cprevious<CR>
 
+"переход по клавише home не в начало строки, а к началу текста в строке
+imap <Home> <Esc>^i
+
 "snipmate setup
 try
   source ~/.vim/snippets/support_functions.vim
