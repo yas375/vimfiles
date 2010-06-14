@@ -14,7 +14,7 @@ set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
 
 set incsearch   "find the next match as we type the search
-set ic "игнорировать регист при поиске 
+set ic "игнорировать регист при поиске
 
 set number      "add line numbers
 set showbreak=...
@@ -229,6 +229,7 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:\ \ ,extends:>,precedes:<
+set list listchars=tab:»·,trail:·
 " disabling list because it interferes with soft wrap
 
 set formatoptions-=o "dont continue comments when pushing o/O
@@ -385,3 +386,15 @@ function! s:HighlightLongLines(width)
         echomsg "Usage: HighlightLongLines [natural number]"
     endif
 endfunction
+
+" Removes trailing spaces
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+:endfunction
+
+map <F2> :call TrimWhiteSpace()<CR>
+map! <F2> :call TrimWhiteSpace()<CR>
+
+autocmd FileType c,cpp,java,php,rb,erb
+autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
