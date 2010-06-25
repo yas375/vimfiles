@@ -401,3 +401,8 @@ autocmd FileType c,cpp,java,php,rb,erb
 autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 map <F9> <Esc><Esc>:silent !/usr/bin/gnome-terminal<CR>
+
+" some useful mappings for rails application
+map <C-s-c> <Esc><Esc>:silent !/usr/bin/gnome-terminal -e ./script/console<CR>
+map <C-s-l> <Esc><Esc>:silent !/usr/bin/gnome-terminal -e "tail -f log/development.log"<CR>
+
