@@ -399,3 +399,5 @@ map! <F2> :call TrimWhiteSpace()<CR>
 
 autocmd FileType c,cpp,java,php,rb,erb
 autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+
+map <F9> <Esc><Esc>:silent !/usr/bin/gnome-terminal<CR>
