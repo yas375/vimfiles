@@ -307,8 +307,10 @@ nnoremap <leader>b :BufExplorer<cr>
 nnoremap <F5> <Esc>:BufExplorer<cr>
 
 "map to CommandT TextMate style finder
-nnoremap <leader>t :CommandT<CR>
+nnoremap <leader>o :CommandT<CR>
 "nnoremap <C-t> :CommandT<cr>
+
+nnoremap <leader>t :TlistToggle<CR>
 
 "map Q to something useful
 noremap Q gq
@@ -405,4 +407,10 @@ map <F9> <Esc><Esc>:silent !/usr/bin/gnome-terminal<CR>
 " some useful mappings for rails application
 map <C-s-c> <Esc><Esc>:silent !/usr/bin/gnome-terminal -e ./script/console<CR>
 map <C-s-l> <Esc><Esc>:silent !/usr/bin/gnome-terminal -e "tail -f log/development.log"<CR>
+
+
+set shell=/bin/bash
+
+" Ctrol-Tab to switch between 2 last buffers
+nmap <C-Tab> :b#<CR>
 
