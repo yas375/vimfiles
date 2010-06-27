@@ -414,3 +414,8 @@ set shell=/bin/bash
 " Ctrol-Tab to switch between 2 last buffers
 nmap <C-Tab> :b#<CR>
 
+" git (fugitive)
+nmap <Leader>gs :Gstatus<cr>
+nmap <Leader>gb :Gblame<cr>
+nmap <Leader>gc :Gcommit<cr>
+nmap <Leader>gd :Gdiff<cr>
