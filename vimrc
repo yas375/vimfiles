@@ -272,7 +272,7 @@ if has("gui_running")
     set lines=999 columns=999
     if has("gui_gnome")
         set term=gnome-256color
-        set guifont=Inconsolata\ Medium
+        "set guifont=Inconsolata\ Medium
     else
         set guitablabel=%M%t
     endif
