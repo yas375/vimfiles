@@ -419,3 +419,16 @@ nmap <Leader>gs :Gstatus<cr>
 nmap <Leader>gb :Gblame<cr>
 nmap <Leader>gc :Gcommit<cr>
 nmap <Leader>gd :Gdiff<cr>
+
+"" Вырезать-копировать-вставить через Ctrl
+vnoremap <C-X> "+x " CTRL-X - вырезать
+vnoremap <C-C> "+y  " CTRL-C - копировать
+map <C-V>      "+gP " CTRL-V вставить под курсором
+"" Отменить-вернуть через Ctrl
+noremap <C-Z> u " отмена действия
+inoremap <C-Z> <C-O>u
+noremap <C-Y> <C-R> " вернуть отменённое назад
+inoremap <C-Y> <C-O><C-R>
+
+" C(trl)+d - дублирование текущей строки
+imap <C-d> <esc>yypi
