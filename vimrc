@@ -227,12 +227,6 @@ set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
-"display tabs and trailing spaces
-"set list
-"set listchars=tab:\ \ ,extends:>,precedes:<
-set list listchars=tab:»·,trail:·
-" disabling list because it interferes with soft wrap
-
 set formatoptions-=o "dont continue comments when pushing o/O
 
 "vertical/horizontal scroll off settings
@@ -296,7 +290,7 @@ else
 endif
 
 nmap <silent> <Leader>p :NERDTreeToggle<CR>
-map <F11> <Esc>:NERDTreeToggle<cr>
+nmap <silent> <Leader>f :NERDTreeFind<CR>
 
 "make <c-l> clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR><C-L>
@@ -390,6 +384,12 @@ function! s:HighlightLongLines(width)
     endif
 endfunction
 
+"display tabs and trailing spaces
+"set list
+"set listchars=tab:\ \ ,extends:>,precedes:<
+set list listchars=tab:»·,trail:·
+" disabling list because it interferes with soft wrap
+
 " Removes trailing spaces
 function TrimWhiteSpace()
   %s/\s*$//
@@ -407,6 +407,7 @@ map <F9> <Esc><Esc>:silent !/usr/bin/gnome-terminal<CR>
 " some useful mappings for rails application
 map <Leader>sc <Esc><Esc>:silent !/usr/bin/gnome-terminal -e ./script/console<CR>
 map <Leader>sl <Esc><Esc>:silent !/usr/bin/gnome-terminal -e "tail -f log/development.log"<CR>
+map <Leader>sr <Esc><Esc>:silent Rake routes<CR>
 
 
 set shell=/bin/bash
