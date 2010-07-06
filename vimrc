@@ -433,3 +433,10 @@ inoremap <C-Y> <C-O><C-R>
 
 " C(trl)+d - дублирование текущей строки
 imap <C-d> <esc>yypi
+
+" переключение ракладок
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+
