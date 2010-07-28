@@ -11,6 +11,7 @@ set backspace=indent,eol,start
 set history=1000
 
 set showcmd     "show incomplete cmds down the bottom
+
 set showmode    "show current mode down the bottom
 
 set incsearch   "find the next match as we type the search
@@ -241,8 +242,8 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 
 "load ftplugins and indent files
-filetype plugin on
-filetype indent on
+"filetype plugin on
+"filetype indent on
 
 "turn on syntax highlighting
 syntax on
@@ -440,3 +441,12 @@ set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
 
+" < & > - делаем отступы для блоков
+vmap < <gv
+vmap > >gv
+
+" highlight current line
+set cursorline
+
+" Поиск и замена слова под курсором
+nmap ; :%s/\<<c-r>=expand("<cword>")<cr>\>/
