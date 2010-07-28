@@ -213,6 +213,8 @@ function! s:Median(nums)
     endif
 endfunction
 
+
+
 "indent settings
 set shiftwidth=2
 set softtabstop=2
@@ -223,6 +225,7 @@ set autoindent
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
+
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
@@ -236,7 +239,7 @@ set sidescrolloff=7
 set sidescroll=1
 
 "necessary on some Linux distros for pathogen to properly load bundles
-filetype off
+filetype on
 
 "load pathogen managed plugins
 call pathogen#runtime_append_all_bundles()
